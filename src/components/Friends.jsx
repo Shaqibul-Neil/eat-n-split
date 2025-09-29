@@ -1,4 +1,5 @@
-import List from "./List";
+import Friend from "./Friend";
+
 const initialFriends = [
   {
     id: 118836,
@@ -19,14 +20,16 @@ const initialFriends = [
     balance: 0,
   },
 ];
-const FriendsList = () => {
+const Friends = () => {
   return (
-    <div>
-      {initialFriends.map((friend) => (
-        <List key={friend.id} friend={friend} />
-      ))}
-    </div>
+    <>
+      <ul>
+        {initialFriends.map((friend) => (
+          <Friend key={friend.id} friend={friend} />
+        ))}
+      </ul>
+    </>
   );
 };
 
-export default FriendsList;
+export default Friends;

@@ -1,13 +1,25 @@
 import "./App.css";
-import FriendsList from "./components/FriendsList";
+import Friends from "./components/Friends";
+import FormAddFriend from "./components/FormAddFriend";
+import { useState } from "react";
+import Button from "./components/Button";
+import FormSplitBill from "./components/FormSplitBill";
 
 function App() {
+  const [showForm, setShowForm] = useState(false);
+  const handleClick = () => {
+    setShowForm(!showForm);
+  };
   return (
     <div className="app">
       <div className="sidebar">
-        <FriendsList />
-        <button className="button">Add Friend</button>
+        <Friends />
+        <FormAddFriend />
+        <Button onClick={handleClick}>
+          {showForm ? "Close" : "Add Friend"}
+        </Button>
       </div>
+      <FormSplitBill />
     </div>
   );
 }
