@@ -19,6 +19,7 @@ const FormAddFriend = ({ handleAddFriend }) => {
     setName("");
     setImage("https://i.pravatar.cc/48");
   };
+
   return (
     <form className="form-add-friend" onSubmit={handleAddFriendSubmit}>
       <label>🧑‍🤝‍🧑 Friend Name</label>
