@@ -2,12 +2,14 @@ import Button from "./Button";
 
 const Friend = ({ friend, onSelection, selectedFriend }) => {
   const isSelected = selectedFriend?.id === friend.id;
+
   const conditionalText = () => {
     if (friend.balance > 0) return `${friend.name} owes you ${friend.balance}$`;
     if (friend.balance < 0)
       return `You owe ${friend.name} ${Math.abs(friend.balance)}$`;
     return `You and ${friend.name} are even`;
   };
+
   const conditionalClass = () => {
     if (friend.balance > 0) return "green";
     if (friend.balance < 0) return "red";
